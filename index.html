@@ -3,27 +3,46 @@
         <link rel="stylesheet" href="index.css">
     </head>
     <body>
-    
-        <form>
-        <input type="color" id="color"/>
-        <label for="mode">
-        <select name="mode" id="mode">
-           <option value="monochrome">monochrome</option>
-           <option value="monochrome-dark">monochrome dark</option>
-           <option value="monochrome-light">monochrome light</option>
-           <option value="analogic">analogic</option>
-           <option value="complement">complement</option>
-           <option value="analogic-complement">analogic complement</option>
-           <option value="triad">triad</option>
-           <option value="quad">quad</option>
-        </select>
-        </label>
-        <button type="submit" id="btn">Change Color</button>
+        <main class="container">
+        <form class="new-color">
+            <input type="color" id="color"/>
+            
+            <select name="mode" id="mode">
+                <option value="monochrome">monochrome</option>
+                <option value="monochrome-dark">monochrome dark</option>
+                <option value="monochrome-light">monochrome light</option>
+                <option value="analogic">analogic</option>
+                <option value="complement">complement</option>
+                <option value="analogic-complement">analogic complement</option>
+                <option value="triad">triad</option>
+                <option value="quad">quad</option>
+            </select>
+            <button type="submit" id="btn">Change Color</button>
         </form>
-        <div id="color-palette">
+        <section>
+            <div class="color-palette">
+                <div class="color-disp"></div>
+                <p class="color-hex">deez1</p>
+            </div>
+            <div class="color-palette">
+                <div class="color-disp"></div>
+                <p class="color-hex">deez1</p>
+            </div>
+            <div class="color-palette">
+                <div class="color-disp"></div>
+                <p class="color-hex">deez1</p>
+            </div>
+            <div class="color-palette">
+                <div class="color-disp"></div>
+                <p class="color-hex">deez1</p>
+            </div>
+            <div class="color-palette">
+                <div class="color-disp"></div>
+                <p class="color-hex">deez1</p>
+            </div>
         
-        </div>
-        <div id="hex-codes"></div>
         <script src="index.js"></script>
+            </section>
+        </main>
     </body>
 </html>
