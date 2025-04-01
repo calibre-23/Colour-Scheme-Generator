@@ -1,12 +1,22 @@
 
 
 
-function getColors() {
-    fetch("https://www.thecolorapi.com/scheme?hex=0047AB&rgb=0,71,171&hsl=215,100%,34%&cmyk=100,58,0,33&format=html&mode=analogic&count=6")      
-     .then(response => response.json())
-        .then(data => {
-            const colors = data.colors.map(color => color.hex.value);
-            const colorDivs = colors.map(color => `<div class="color" style="background-color: ${color}">${color}</div>`).join('');
-            document.getElementById('colors').innerHTML = colorDivs;
 
-}
+function getColors(e){
+    e.preventDefault();
+    let color=document.getElementById("color").value.substring(1);
+    let mode=document.getElementById("mode").value;
+
+    fetch(`https://www.thecolorapi.com/scheme?hex=${color}&mode=${mode}&count=5`)
+    .then((response) => response.json())
+    .then((data) => {
+        let colorDivs = document.querySelectorAll(".color-disp");
+        let colorHexes = document.querySelectorAll(".color-hex");
+        data.colors.forEach((color,index ) => {
+            if (colorDivs[index]) {
+                colorDivs[index].style.backgroundColor = color.hex.value;
+                colorHexes[index].innerText = color.hex.value;
+            }})
+})}
+
+document.getElementById("btn").addEventListener("click", getColors);
