@@ -1,7 +1,3 @@
-
-
-
-
 function getColors(e){
     e.preventDefault();
     let color=document.getElementById("color").value.substring(1);
@@ -20,3 +16,17 @@ function getColors(e){
 })}
 
 document.getElementById("btn").addEventListener("click", getColors);
+
+
+function copyToClipboard(event) {
+    let colorHex=event.target;
+    let colorValue=colorHex.innerText;
+    navigator.clipboard.writeText(colorValue)
+    .then(() => {
+        alert(`Copied ${colorValue} to clipboard`);
+    })
+    .catch(err => {
+        console.error('Error copying text: ', err);
+    }); 
+}
+  
